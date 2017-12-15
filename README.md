@@ -21,3 +21,6 @@ There is a sampleFastRCNN example under sample folder, which reads individual im
 [3] http://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#setinput
 Official NVIDIA documentation on TensorRT, including the sampleFasterRCNN module.
 Basically, this existing sample module takes ppm file as input, meaning in case a video file is input instead, some image processing library is needed to extract frames and convert them into ppm format.
+
+[4] https://github.com/dusty-nv/jetson-inference/blob/master/imagenet-console/imagenet-console.cpp#L68
+Jetpack example code, load .jpg file into CUDA memory
