@@ -17,3 +17,7 @@ Claims SSD model runs at ~8.5 FPS on TX1 without using TensorRT.
 
 [2] TensorRT folder on TX2, after successful Jetpack 3.1 installation
 There is a sampleFastRCNN example under sample folder, which reads individual images as input
+
+[3] http://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#setinput
+Official NVIDIA documentation on TensorRT, including the sampleFasterRCNN module.
+Basically, this existing sample module takes ppm file as input, meaning in case a video file is input instead, some image processing library is needed to extract frames and convert them into ppm format.
