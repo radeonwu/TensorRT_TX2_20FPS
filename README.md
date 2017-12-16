@@ -22,6 +22,12 @@ There is a sampleFastRCNN example under sample folder, which reads individual im
 Official NVIDIA documentation on TensorRT, including the sampleFasterRCNN module.
 Basically, this existing sample module takes ppm file as input, meaning in case a video file is input instead, some image processing library is needed to extract frames and convert them into ppm format.
 
+https://developer.ridgerun.com/wiki/index.php?title=Gstreamer_pipelines_for_Tegra_X2#nvcamerasrc
+3-rd party explanation of gstreamer piplines on Jetson TX2;
+
+http://developer2.download.nvidia.com/embedded/L4T/r24_Release_v2.0/Docs/L4T_Tegra_X1_Multimedia_User_Guide_Release_24.2.pdf?N2WLlIXCd3pm_shGSAXKkLxPRe5fO1bAjiOOTKyFFqe5Xecan7C0F7O0oWhUvcxrD828mvemWUBBYu5wb5gENNE_ZfP7z58J_GC3raZWAilfQ_JKnjXQNlAjbK5Gts4GqkT4vtnGF1uCIXGJbFTIJ2Bz-_GDdNdDaUvMgyX9S1tqWp-8rKYw-SJKb5Fh-9MsjWEnwUk
+Nvidia Manual of gstreamer pipeline on Jetson
+
 [4] https://github.com/dusty-nv/jetson-inference/blob/master/imagenet-console/imagenet-console.cpp#L68
 Jetpack example code, load .jpg file into CUDA memory
 
