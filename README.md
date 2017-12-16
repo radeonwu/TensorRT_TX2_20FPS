@@ -26,6 +26,6 @@ Basically, this existing sample module takes ppm file as input, meaning in case 
 Jetpack example code, load .jpg file into CUDA memory
 
 [5]
-https://devtalk.nvidia.com/default/topic/1024723/detectnet-quot-video-file-quot-rather-than-a-jpg-or-camera-how-do-i-test-a-file-/
+https://devtalk.nvidia.com/default/topic/1024723/detectnet-quot-video-file-quot-rather-than-a-jpg-or-camera-how-do-i-test-a-file-/  
 https://github.com/dusty-nv/jetson-inference/issues/104
 One user posted a solution using using gstreamer to take a video file as input
