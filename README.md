@@ -15,7 +15,7 @@ Therefore the purpose for this project is to achieve around 20 fps on TX2 throug
 [1] https://myurasov.github.io/2016/11/27/ssd-tx1.html  
 Claims SSD model runs at ~8.5 FPS on TX1 without using TensorRT. 
 
-[2] TensorRT folder on TX2, after successful Jetpack 3.1 installation 
+[2] TensorRT folder on TX2, after successful Jetpack 3.1 installation   
 There is a sampleFastRCNN example under sample folder, which reads individual images as input
 
 [3] http://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#setinput  
@@ -37,7 +37,7 @@ https://github.com/dusty-nv/jetson-inference/issues/104
 One user posted a solution using using gstreamer to take a video file as input
 
 [6]
-https://yq.aliyun.com/articles/160369 
+https://yq.aliyun.com/articles/160369   
 中文社区分享，含安装完JETPACK后读取本地视频文件后运行demo测试程序
 
 [7]
