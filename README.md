@@ -8,7 +8,7 @@ to test one of the real-time object detection algos (SSD, YOLO2 or Fast R-CNN) o
 
 2, NVIDI officially claims the new TensorRT 2 (under Jetpack 3.1) can accelerate the detection by 2x
 
-Therefore the purpose for this project to trying to achieve around 20 fps on TX2 through tensorRT, using one of the real-time object detection algos (SSD, YOLO2 or Fast R-CNN).  
+Therefore the purpose for this project is to achieve around 20 fps on TX2 through tensorRT, using one of the real-time object detection algos (SSD, YOLO2 or Fast R-CNN).  
 
 
 # Related resources
