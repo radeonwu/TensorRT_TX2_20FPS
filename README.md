@@ -35,3 +35,9 @@ Jetpack example code, load .jpg file into CUDA memory
 https://devtalk.nvidia.com/default/topic/1024723/detectnet-quot-video-file-quot-rather-than-a-jpg-or-camera-how-do-i-test-a-file-/  
 https://github.com/dusty-nv/jetson-inference/issues/104   
 One user posted a solution using using gstreamer to take a video file as input
+
+[6]
+https://yq.aliyun.com/articles/160369
+中文社区分享，含安装完JETPACK后读取本地视频文件后运行demo测试程序
+
+
