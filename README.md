@@ -12,23 +12,23 @@ Therefore the purpose for this project is to achieve around 20 fps on TX2 throug
 
 
 # Related resources
-[1] https://myurasov.github.io/2016/11/27/ssd-tx1.html
+[1] https://myurasov.github.io/2016/11/27/ssd-tx1.html  
 Claims SSD model runs at ~8.5 FPS on TX1 without using TensorRT. 
 
-[2] TensorRT folder on TX2, after successful Jetpack 3.1 installation
+[2] TensorRT folder on TX2, after successful Jetpack 3.1 installation 
 There is a sampleFastRCNN example under sample folder, which reads individual images as input
 
-[3] http://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#setinput
+[3] http://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#setinput  
 Official NVIDIA documentation on TensorRT, including the sampleFasterRCNN module.
 Basically, this existing sample module takes ppm file as input, meaning in case a video file is input instead, some image processing library is needed to extract frames and convert them into ppm format.
 
-https://developer.ridgerun.com/wiki/index.php?title=Gstreamer_pipelines_for_Tegra_X2#nvcamerasrc
+https://developer.ridgerun.com/wiki/index.php?title=Gstreamer_pipelines_for_Tegra_X2#nvcamerasrc  
 3-rd party explanation of gstreamer piplines on Jetson TX2;
 
 http://developer2.download.nvidia.com/embedded/L4T/r24_Release_v2.0/Docs/L4T_Tegra_X1_Multimedia_User_Guide_Release_24.2.pdf?N2WLlIXCd3pm_shGSAXKkLxPRe5fO1bAjiOOTKyFFqe5Xecan7C0F7O0oWhUvcxrD828mvemWUBBYu5wb5gENNE_ZfP7z58J_GC3raZWAilfQ_JKnjXQNlAjbK5Gts4GqkT4vtnGF1uCIXGJbFTIJ2Bz-_GDdNdDaUvMgyX9S1tqWp-8rKYw-SJKb5Fh-9MsjWEnwUk
 Nvidia Manual of gstreamer pipeline on Jetson
 
-[4] https://github.com/dusty-nv/jetson-inference/blob/master/imagenet-console/imagenet-console.cpp#L68
+[4] https://github.com/dusty-nv/jetson-inference/blob/master/imagenet-console/imagenet-console.cpp#L68  
 Jetpack example code, load .jpg file into CUDA memory
 
 [5]
@@ -37,10 +37,10 @@ https://github.com/dusty-nv/jetson-inference/issues/104
 One user posted a solution using using gstreamer to take a video file as input
 
 [6]
-https://yq.aliyun.com/articles/160369
+https://yq.aliyun.com/articles/160369 
 中文社区分享，含安装完JETPACK后读取本地视频文件后运行demo测试程序
 
 [7]
-http://download.csdn.net/download/zys615/9956504
+http://download.csdn.net/download/zys615/9956504  
 中文社区TX2开发资料共享
 
