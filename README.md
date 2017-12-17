@@ -40,4 +40,7 @@ One user posted a solution using using gstreamer to take a video file as input
 https://yq.aliyun.com/articles/160369
 中文社区分享，含安装完JETPACK后读取本地视频文件后运行demo测试程序
 
+[7]
+http://download.csdn.net/download/zys615/9956504
+中文社区TX2开发资料共享
 
