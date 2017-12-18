@@ -49,8 +49,9 @@ http://download.csdn.net/download/zys615/9956504
 ~/tegra_multimedia_api/samples/backend$ ./backend 1 ../../data/Video/sample_outdoor_car_1080p_10fps.h264 H264 --trt-deployfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.prototxt --trt-modelfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.caffemodel --trt-forcefp32 0 --trt-proc-interval 1 -fps 10
 
 
-# technics for Jetson TX2
-(1) Two ways to change TX2's running clocks/mode
+# Technics for Jetson TX2
+(1) Two ways to change TX2's running clocks/mode    
+
 1.1 maximize clock speed     
   $ sudo /home/ubuntu/jetson_clocks.sh to maximize the speed    
 show all the options by running,     
