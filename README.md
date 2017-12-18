@@ -48,6 +48,7 @@ http://download.csdn.net/download/zys615/9956504
 (a) Cited from [5]    
 ~/tegra_multimedia_api/samples/backend$ ./backend 1 ../../data/Video/sample_outdoor_car_1080p_10fps.h264 H264 --trt-deployfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.prototxt --trt-modelfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.caffemodel --trt-forcefp32 0 --trt-proc-interval 1 -fps 10
 
+Test result: the above commands runs pretty smooth on TX2, although detection result not the best. 
 
 # Technics for Jetson TX2
 (1) Two ways to change TX2's running clocks/mode    
