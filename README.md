@@ -79,3 +79,7 @@ from avi -> H264
   $ avconv -i af01_779.avi -c:v libx264 -c:a copy -s 1920x1080 -r 25 af01_779HD.h264    
 so that the sample "back" program in TX2 can recognize.  
 
+(3) gstreamer playback on TX2
+The following pipeline settings can playback .h264 AF01 video on TX2, which is converted from .avi format   
+    $ gst-launch-1.0 filesrc location=af01_779.h264 ! h264parse ! omxh264dec ! nveglglessink -e
+
