@@ -52,11 +52,11 @@ http://download.csdn.net/download/zys615/9956504
 # technics for Jetson TX2
 (1) Two ways to change TX2's running clocks/mode
 1.1 maximize clock speed     
-  $ sudo /home/ubuntu/jetson_clocks.sh to maximize the speed
+  $ sudo /home/ubuntu/jetson_clocks.sh to maximize the speed    
 show all the options by running,     
-  $ sudo /home/ubuntu/jetson_clocks.sh --help  
+  $ sudo /home/ubuntu/jetson_clocks.sh --help   
 to save default clock speed into a file, run    
-  $ sudo /home/ubuntu/jetson_clocks.sh --store <file name> 
+  $ sudo /home/ubuntu/jetson_clocks.sh --store <file name>    
 to restore the default clock speed, run    
   $ sudo /home/ubuntu/jetson_clocks.sh --restore <file name> 
 
@@ -65,9 +65,9 @@ refer to the link below for details,
 
 1.2 switch running mode
   by running    
-    $ sudo nvpmodel -m [mode]
+    $ sudo nvpmodel -m [mode]   
   query which mode is currently being used by running   
-    $ sudo nvpmodel -q --verbose
+    $ sudo nvpmodel -q --verbose    
   
   refer to the link below for details,    
     http://www.jetsonhacks.com/2017/03/25/nvpmodel-nvidia-jetson-tx2-development-kit/
