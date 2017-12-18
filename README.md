@@ -44,3 +44,30 @@ https://yq.aliyun.com/articles/160369
 http://download.csdn.net/download/zys615/9956504  
 中文社区TX2开发资料共享
 
+# Googlenet sample on TX2
+(a) Cited from [5]
+~/tegra_multimedia_api/samples/backend$ ./backend 1 ../../data/Video/sample_outdoor_car_1080p_10fps.h264 H264 --trt-deployfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.prototxt --trt-modelfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.caffemodel --trt-forcefp32 0 --trt-proc-interval 1 -fps 10
+
+
+# technics for Jetson TX2
+(1) Two ways to change TX2's running clocks/mode
+1.1 maximize clock speed 
+  $ sudo /home/ubuntu/jetson_clocks.sh to maximize the speed
+show all the options by running, 
+  $ sudo /home/ubuntu/jetson_clocks.sh --help  
+to save default clock speed into a file, run
+  $ sudo /home/ubuntu/jetson_clocks.sh --store <file name> 
+to restore the default clock speed, run 
+  $ sudo /home/ubuntu/jetson_clocks.sh --restore <file name> 
+
+refer to the link below for details,
+    https://devtalk.nvidia.com/default/topic/999915/how-do-you-switch-between-max-q-and-max-p/
+
+1.2 switch running mode
+  by running
+    $ sudo nvpmodel -m [mode]
+  query which mode is currently being used by running
+    $ sudo nvpmodel -q --verbose
+  
+  refer to the link below for details,
+    http://www.jetsonhacks.com/2017/03/25/nvpmodel-nvidia-jetson-tx2-development-kit/
