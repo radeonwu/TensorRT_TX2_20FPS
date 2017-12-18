@@ -22,6 +22,9 @@ There is a sampleFastRCNN example under sample folder, which reads individual im
 Official NVIDIA documentation on TensorRT, including the sampleFasterRCNN module.
 Basically, this existing sample module takes ppm file as input, meaning in case a video file is input instead, some image processing library is needed to extract frames and convert them into ppm format.
 
+https://devtalk.nvidia.com/default/topic/1023905/jetson-tx2/no-result-when-using-tensorrt-sample-fasterrcnn-with-other-images/3
+Q&A of loading jpg file for sampleFasterRCNN
+
 https://developer.ridgerun.com/wiki/index.php?title=Gstreamer_pipelines_for_Tegra_X2#nvcamerasrc  
 3-rd party explanation of gstreamer piplines on Jetson TX2;
 
