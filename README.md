@@ -91,7 +91,7 @@ The following pipeline settings can playback .h264 AF01 video on TX2, which is c
     gst_pad_add_probe()     
 https://gstreamer.freedesktop.org/documentation/application-development/advanced/pipeline-manipulation.html#section-spoof-appsink
 
-4.2    
+4.2   using buffer/sample+buffer      
 4.2-a for gst-0.xx version,     
     gst_app_sink_pull_buffer()   
 https://coherentmusings.wordpress.com/2014/07/09/extracting-frame-from-a-gstreamer-pipeline-and-displaying-it-with-opencv/
