@@ -73,3 +73,9 @@ refer to the link below for details,
   
   refer to the link below for details,    
     http://www.jetsonhacks.com/2017/03/25/nvpmodel-nvidia-jetson-tx2-development-kit/
+
+(2) AF01 video convert
+from avi -> H264    
+  $ avconv -i af01_779.avi -c:v libx264 -c:a copy -s 1920x1080 -r 25 af01_779HD.h264    
+so that the sample "back" program in TX2 can recognize.  
+
