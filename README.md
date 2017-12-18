@@ -86,3 +86,15 @@ so that the sample "back" program in TX2 can recognize.
 The following pipeline settings can playback .h264 AF01 video on TX2, which is converted from .avi format   
     $ gst-launch-1.0 filesrc location=af01_779.h264 ! h264parse ! omxh264dec ! nveglglessink -e
 
+(4) a few examples about grabbing frame from video file using Gstreamer   
+4.1   using pad/probe mechanism, gst_pad_add_probe()     
+https://gstreamer.freedesktop.org/documentation/application-development/advanced/pipeline-manipulation.html#section-spoof-appsink
+
+4.2 
+4.2-a for gst-0.xx version, gst_app_sink_pull_buffer()   
+https://coherentmusings.wordpress.com/2014/07/09/extracting-frame-from-a-gstreamer-pipeline-and-displaying-it-with-opencv/
+
+4.2-b for gst-1.0 version       
+    gst_sample_unref(sample);
+    sample = gst_app_sink_pull_sample(GST_APP_SINK(sink));    
+https://github.com/opencv/opencv/blob/master/modules/videoio/src/cap_gstreamer.cpp
