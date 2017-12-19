@@ -101,5 +101,8 @@ https://coherentmusings.wordpress.com/2014/07/09/extracting-frame-from-a-gstream
     sample = gst_app_sink_pull_sample(GST_APP_SINK(sink));    
 https://github.com/opencv/opencv/blob/master/modules/videoio/src/cap_gstreamer.cpp
 
-Error during compiling
-undefined reference to `cudaRGBToRGBA
+(5) Error while compiling customized sampleFasterRCNN.cpp program   
+undefined reference to `cudaRGBToRGBA`    
+https://stackoverflow.com/questions/35886052/cuda-c-linking-error-undefined-reference-to    
+Suggested to add -lcuda -lcudart in cmake file
+
