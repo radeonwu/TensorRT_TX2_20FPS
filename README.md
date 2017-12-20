@@ -106,5 +106,11 @@ undefined reference to `cudaRGBToRGBA`
 https://stackoverflow.com/questions/35886052/cuda-c-linking-error-undefined-reference-to    
 Suggested to add -lcuda -lcudart in cmake file
 
-A similar example code
-https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/snapshot/snapshot.c
+Example codes of Gstreamer video inputs 
+https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/snapshot/snapshot.c   
+
+Gstreamer official site, handy elements   
+https://gstreamer.freedesktop.org/documentation/tutorials/basic/handy-elements.html   
+$ gst-launch-1.0 filesrc location=f:\\media\\sintel\\sintel_trailer-480p.webm ! decodebin ! autovideosink   
+
+https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/seek/stepping.c
