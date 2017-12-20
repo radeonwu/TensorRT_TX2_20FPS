@@ -97,7 +97,7 @@ https://gstreamer.freedesktop.org/documentation/application-development/advanced
 https://coherentmusings.wordpress.com/2014/07/09/extracting-frame-from-a-gstreamer-pipeline-and-displaying-it-with-opencv/
 
 4.2-b for gst-1.0 version       
-    gst_sample_unref(sample);
+    gst_sample_unref(sample);   
     sample = gst_app_sink_pull_sample(GST_APP_SINK(sink));    
 https://github.com/opencv/opencv/blob/master/modules/videoio/src/cap_gstreamer.cpp
 
