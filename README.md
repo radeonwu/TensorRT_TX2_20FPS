@@ -114,3 +114,9 @@ https://gstreamer.freedesktop.org/documentation/tutorials/basic/handy-elements.h
 including a convenient launch cmd, $ gst-launch-1.0 filesrc location=f:\\media\\sintel\\sintel_trailer-480p.webm ! decodebin ! autovideosink   
 and this page gives example casting from autovideosink to appsink,    
 https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/seek/stepping.c
+
+example 
+https://stackoverflow.com/questions/27419113/playing-a-raw-video-using-gst-launch
+including such an example pipeline,
+$ gst-launch-1.0 filesrc location=/home/user/Videos/out.yuv ! videoparse width=1920 height=816 framerate=24/1 format=2 ! autovideoconvert ! autovideosink
+C
