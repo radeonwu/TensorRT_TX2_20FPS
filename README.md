@@ -106,3 +106,5 @@ undefined reference to `cudaRGBToRGBA`
 https://stackoverflow.com/questions/35886052/cuda-c-linking-error-undefined-reference-to    
 Suggested to add -lcuda -lcudart in cmake file
 
+A similar example code
+https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/snapshot/snapshot.c
