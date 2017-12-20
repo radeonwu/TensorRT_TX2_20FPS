@@ -111,6 +111,6 @@ https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/snap
 
 Gstreamer official site, handy elements   
 https://gstreamer.freedesktop.org/documentation/tutorials/basic/handy-elements.html   
-$ gst-launch-1.0 filesrc location=f:\\media\\sintel\\sintel_trailer-480p.webm ! decodebin ! autovideosink   
-
+including a convenient launch cmd, $ gst-launch-1.0 filesrc location=f:\\media\\sintel\\sintel_trailer-480p.webm ! decodebin ! autovideosink   
+and this page gives example casting from autovideosink to appsink,    
 https://cgit.freedesktop.org/gstreamer/gst-plugins-base/tree/tests/examples/seek/stepping.c
