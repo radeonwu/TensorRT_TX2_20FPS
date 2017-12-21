@@ -52,7 +52,8 @@ http://download.csdn.net/download/zys615/9956504
 
 # Googlenet sample on TX2
 (a) Cited from [5]    
-~/tegra_multimedia_api/samples/backend$ ./backend 1 ../../data/Video/sample_outdoor_car_1080p_10fps.h264 H264 --trt-deployfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.prototxt --trt-modelfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.caffemodel --trt-forcefp32 0 --trt-proc-interval 1 -fps 10
+$ cd ~/tegra_multimedia_api/samples/backend   
+$ ./backend 1 ../../data/Video/sample_outdoor_car_1080p_10fps.h264 H264 --trt-deployfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.prototxt --trt-modelfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.caffemodel --trt-forcefp32 0 --trt-proc-interval 1 -fps 10
 
 Test result: the above commands runs pretty smooth on TX2, although detection result not the best. 
 
@@ -66,7 +67,11 @@ during patch stage, the update of 1st file, i.e., Makefile, has to be done manua
 https://jkjung-avt.github.io/ssd/
 
 Test result: 
-changed sample outdoor_car_xx video file from 1080p to 720p, and it runs 9 fps on TX2
+- changed sample outdoor_car_xx video file from 1080p to 720p, and it runs 9 fps on TX2   
+- revise the video file input inside ssd_pascal_video.py accordingly    
+$ cd Caffe_ROOT
+$ python ./examples/ssd/ssd_pascal_video.py
+
 
 # Technics for Jetson TX2
 (1) Two ways to change TX2's running clocks/mode    
