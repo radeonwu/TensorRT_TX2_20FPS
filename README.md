@@ -143,6 +143,14 @@ $ gst-launch-1.0 filesrc location=/home/user/Videos/out.yuv ! videoparse width=1
 
 
 # Use OpenCV 3.0 rather than Gstreamer
-(1) A good example explanation of opencv 3.0 install on TX2   
-http://petermoran.org/csi-cameras-on-tx2/#video-capture-from-gstreamer-pipeline-in-opencv
+(1) A good example explanation of opencv 3.0 install on TX2, including code snippet using gstreamer pipeline to read cam input and convert format at the end,       
+http://petermoran.org/csi-cameras-on-tx2/#video-capture-from-gstreamer-pipeline-in-opencv   
+and this one on opencv 3 install on TX2,   
+https://jkjung-avt.github.io/opencv3-on-tx2/    
+
+(2)
+Both ssd_object_detection.cpp & ssd_mobilenet_object_detection.cpp file under    
+https://github.com/opencv/opencv/tree/master/samples/dnn    
+include complete flowchart of video file input->frame capture->apply DNN->plot result frame using OpenCV (c++)!
+
 
