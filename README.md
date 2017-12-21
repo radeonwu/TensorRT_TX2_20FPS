@@ -56,6 +56,18 @@ http://download.csdn.net/download/zys615/9956504
 
 Test result: the above commands runs pretty smooth on TX2, although detection result not the best. 
 
+# SSD Test on TX2
+(1) Installation
+Followed steps suggested as below, 
+https://devtalk.nvidia.com/default/topic/1021356/caffe-ssd-on-tx2-cudnn_status_internal_error/    
+during patch stage, the update of 1st file, i.e., Makefile, has to be done manually cause $ git apply xx.patch failed
+
+(2) pre-trained caffe model is download as suggested in page below  
+https://jkjung-avt.github.io/ssd/
+
+Test result: 
+changed sample outdoor_car_xx video file from 1080p to 720p, and it runs 9 fps on TX2
+
 # Technics for Jetson TX2
 (1) Two ways to change TX2's running clocks/mode    
 
