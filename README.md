@@ -140,3 +140,9 @@ example
 https://stackoverflow.com/questions/27419113/playing-a-raw-video-using-gst-launch
 including such an example pipeline, video framerate
 $ gst-launch-1.0 filesrc location=/home/user/Videos/out.yuv ! videoparse width=1920 height=816 framerate=24/1 format=2 ! autovideoconvert ! autovideosink
+
+
+# Use OpenCV 3.0 rather than Gstreamer
+(1) A good example explanation of opencv 3.0 install on TX2   
+http://petermoran.org/csi-cameras-on-tx2/#video-capture-from-gstreamer-pipeline-in-opencv
+
