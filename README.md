@@ -118,5 +118,5 @@ http://gstreamer-devel.966125.n4.nabble.com/gst-element-seek-simple-returns-fals
 
 example 
 https://stackoverflow.com/questions/27419113/playing-a-raw-video-using-gst-launch
-including such an example pipeline,
+including such an example pipeline, video framerate
 $ gst-launch-1.0 filesrc location=/home/user/Videos/out.yuv ! videoparse width=1920 height=816 framerate=24/1 format=2 ! autovideoconvert ! autovideosink
