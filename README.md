@@ -157,4 +157,8 @@ Both ssd_object_detection.cpp & ssd_mobilenet_object_detection.cpp file under
 https://github.com/opencv/opencv/tree/master/samples/dnn    
 include complete flowchart of video file input->frame capture->apply DNN->plot result frame using OpenCV (c++)!
 
+(3) makefile example for opencv
+https://stackoverflow.com/questions/9870297/makefile-to-compile-opencv-code-in-c-on-ubuntu-linux    
+
+
 
