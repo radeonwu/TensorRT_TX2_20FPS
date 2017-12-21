@@ -55,7 +55,8 @@ on TX2, following reference [5],
 $ cd ~/tegra_multimedia_api/samples/backend   
 $ ./backend 1 ../../data/Video/sample_outdoor_car_1080p_10fps.h264 H264 --trt-deployfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.prototxt --trt-modelfile ../../data/Model/GoogleNet_one_class/GoogleNet_modified_oneClass_halfHD.caffemodel --trt-forcefp32 0 --trt-proc-interval 1 -fps 10
 
-Test result: the above commands runs pretty smooth on TX2, although detection result not the best. 
+Test result:    
+the above commands runs pretty smooth on TX2, although detection result not the best. 
 
 # SSD Test on TX2
 (1) Installation
@@ -96,6 +97,9 @@ refer to the link below for details,
   
   refer to the link below for details,    
     http://www.jetsonhacks.com/2017/03/25/nvpmodel-nvidia-jetson-tx2-development-kit/
+
+
+# Video file input using Gstreamer 
 
 (2) AF01 video convert
 from avi -> H264    
