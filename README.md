@@ -12,8 +12,11 @@ Therefore the purpose for this project is to achieve around 20 fps on TX2 throug
 
 
 # Related resources
-[1] https://myurasov.github.io/2016/11/27/ssd-tx1.html  
-Claims SSD model runs at ~8.5 FPS on TX1 without using TensorRT. 
+[1.a] https://myurasov.github.io/2016/11/27/ssd-tx1.html  
+steps for SSD install on TX1; claims SSD model runs at ~8.5 FPS on TX1 without using TensorRT. 
+
+[1.b] https://devtalk.nvidia.com/default/topic/1021356/caffe-ssd-on-tx2-cudnn_status_internal_error/
+NVIDIA steps for SSD install on TX2.
 
 [2] TensorRT folder on TX2, after successful Jetpack 3.1 installation   
 There is a sampleFastRCNN example under sample folder, which reads individual images as input
