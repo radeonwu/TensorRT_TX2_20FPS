@@ -98,6 +98,9 @@ refer to the link below for details,
   refer to the link below for details,    
     http://www.jetsonhacks.com/2017/03/25/nvpmodel-nvidia-jetson-tx2-development-kit/
 
+(2) loop play videos in a folder 
+mplayer -fs -loop 0 *.avi
+
 
 # Video file input using Gstreamer 
 
