@@ -158,7 +158,8 @@ https://github.com/opencv/opencv/tree/master/samples/dnn
 include complete flowchart of video file input->frame capture->apply DNN->plot result frame using OpenCV (c++)!
 
 (3) makefile example for opencv
-https://stackoverflow.com/questions/9870297/makefile-to-compile-opencv-code-in-c-on-ubuntu-linux    
+https://gist.github.com/kevinhughes27/5311609   -- tested working
+https://stackoverflow.com/questions/9870297/makefile-to-compile-opencv-code-in-c-on-ubuntu-linux    -- not working?
 
 
 
