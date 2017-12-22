@@ -98,8 +98,11 @@ refer to the link below for details,
   refer to the link below for details,    
     http://www.jetsonhacks.com/2017/03/25/nvpmodel-nvidia-jetson-tx2-development-kit/
 
-(2) loop play videos in a folder 
+(2) loop play videos with customized fps in a folder 
 mplayer -fps 10 -fs -loop 0 *.avi
+
+(3) convert video fps
+$ MP4Box -add test_track1.h264:fps=30 -new DestMovie.mp4
 
 
 # Video file input using Gstreamer 
