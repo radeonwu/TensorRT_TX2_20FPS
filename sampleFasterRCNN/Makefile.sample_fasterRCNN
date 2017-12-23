@@ -1,0 +1,144 @@
+.SUFFIXES:
+LIBDIR?=lib
+LOCALLIB?="../../lib"
+TRIPLE?=x86_64-linux
+TARGET?=$(shell uname -m)
+ifeq ($(TARGET), aarch64)
+ifeq ($(shell uname -m), aarch64)
+CC = g++
+else
+CC = aarch64-linux-gnu-g++
+endif
+CUCC = /usr/local/cuda/bin/nvcc -m64 -ccbin $(CC)
+else ifeq ($(TARGET), x86_64)
+CC = g++
+CUCC = /usr/local/cuda/bin/nvcc -m64
+else ifeq ($(TARGET), qnx)
+CC = ${QNX_HOST}/usr/bin/aarch64-unknown-nto-qnx7.0.0-g++
+CUCC = $(CUDA_INSTALL_DIR)/bin/nvcc -m64 -ccbin $(CC)
+else ######## 
+$(error Auto-detection of platform failed. Please specify one of the following arguments to make: TARGET=[aarch64|x86_64|qnx])
+endif
+
+ifdef VERBOSE
+AT=
+else
+AT=@
+endif
+
+AR = ar cr
+ECHO = @echo
+
+SHELL=/bin/sh
+
+ROOT_PATH=../..
+OUT_PATH=$(ROOT_PATH)/bin
+OUTDIR=$(OUT_PATH)
+
+define concat
+$1$2$3$4$5$6$7$8
+endef
+
+#$(call make-depend,source-file,object-file,depend-file)
+define make-depend
+  $(AT)$(CC) -MM -MF $3 -MP -MT $2 $(COMMON_FLAGS) $1
+endef
+
+#########################
+
+INCPATHS    =-I"/usr/local/cuda/include" -I"/usr/local/include" -I"../../include" -I"../include"
+LIBPATHS    =-L"/usr/local/cuda/targets/$(TRIPLE)/$(LIBDIR)" -L"/usr/local/lib" $(LIB_RPATH) -L$(LOCALLIB) -L"../lib" -L"/usr/local/cuda/lib64"
+
+
+.SUFFIXES:
+
+COMMON_FLAGS += -Wall -D_REENTRANT
+COMMON_FLAGS += -std=c++11 $(INCPATHS)
+COMMON_LD_FLAGS=$(LIBPATHS) -L$(OUTDIR)
+
+COMMON_FLAGS += `pkg-config opencv --cflags`
+COMMON_LD_FLAGS += `pkg-config opencv --libs`
+
+OBJDIR    =$(call concat,$(OUTDIR),/chobj)
+DOBJDIR   =$(call concat,$(OUTDIR),/dchobj)
+
+COMMON_LIBS = -lcudnn -lcublas -lnvToolsExt -lcudart
+ifneq ($(TARGET), qnx)
+COMMON_LIBS += -lrt -ldl -lpthread
+endif
+
+LIBS  =-lnvinfer_plugin -lnvinfer -lnvcaffe_parser $(COMMON_LIBS)
+DLIBS =-lnvinfer_plugin -lnvinfer -lnvcaffe_parser $(COMMON_LIBS) 
+OBJS   =$(patsubst %.cpp, $(OBJDIR)/%.o, $(wildcard *.cpp))
+DOBJS  =$(patsubst %.cpp, $(DOBJDIR)/%.o, $(wildcard *.cpp))
+POBJS  =$(patsubst %.cc, $(OBJDIR)/%.o, $(wildcard *.cc))
+PDOBJS =$(patsubst %.cc, $(DOBJDIR)/%.o, $(wildcard *.cc))
+
+
+CFLAGS=$(COMMON_FLAGS)
+CFLAGSD=$(COMMON_FLAGS) -g
+LFLAGS=$(COMMON_LD_FLAGS)
+LFLAGSD=$(COMMON_LD_FLAGS)
+
+all: debug release
+release : $(OUTDIR)/$(OUTNAME_RELEASE)
+debug   : $(OUTDIR)/$(OUTNAME_DEBUG)
+
+test: test_debug test_release
+
+test_debug:
+	$(AT)cd $(OUTDIR) && ./$(OUTNAME_DEBUG)
+
+test_release:
+	$(AT)cd $(OUTDIR) && ./$(OUTNAME_RELEASE)
+
+ifdef MAC
+$(OUTDIR)/$(OUTNAME_RELEASE) : $(OBJS) $(POBJS)
+	$(ECHO) Linking: $@
+	$(AT)$(CC) -o $@ $^ $(LFLAGS) $(LIBS)
+
+$(OUTDIR)/$(OUTNAME_DEBUG) : $(DOBJS) $(PDOBJS)
+	$(ECHO) Linking: $@
+	$(AT)$(CC) -o $@ $^ $(LFLAGSD) $(DLIBS)
+else
+$(OUTDIR)/$(OUTNAME_RELEASE) : $(OBJS) $(POBJS)
+	$(ECHO) Linking: $@
+	$(AT)$(CC) -o $@ $^ $(LFLAGS) -Wl,--start-group $(LIBS) -Wl,--end-group
+
+$(OUTDIR)/$(OUTNAME_DEBUG) : $(DOBJS) $(PDOBJS)
+	$(ECHO) Linking: $@
+	$(AT)$(CC) -o $@ $^ $(LFLAGSD) -Wl,--start-group $(DLIBS) -Wl,--end-group
+endif
+
+$(OBJDIR)/%.o: %.cpp
+	$(AT)if [ ! -d $(OBJDIR) ]; then mkdir -p $(OBJDIR); fi
+	$(call make-depend,$<,$@,$(subst .o,.d,$@))
+	$(ECHO) Compiling: $<
+	$(AT)$(CC) $(CFLAGS) -c -o $@ $<
+
+$(DOBJDIR)/%.o: %.cpp
+	$(AT)if [ ! -d $(DOBJDIR) ]; then mkdir -p $(DOBJDIR); fi
+	$(call make-depend,$<,$@,$(subst .o,.d,$@))
+	$(ECHO) Compiling: $<
+	$(AT)$(CC) $(CFLAGSD) -c -o $@ $<
+
+$(OBJDIR)/%.o: %.cc
+	$(AT)if [ ! -d $(OBJDIR) ]; then mkdir -p $(OBJDIR); fi
+	$(call make-depend,$<,$@,$(subst .o,.d,$@))
+	$(ECHO) Compiling: $<
+	$(AT)$(CC) $(CFLAGS) -fPIC -c -o $@ $<
+
+$(DOBJDIR)/%.o: %.cc
+	$(AT)if [ ! -d $(DOBJDIR) ]; then mkdir -p $(DOBJDIR); fi
+	$(call make-depend,$<,$@,$(subst .o,.d,$@))
+	$(ECHO) Compiling: $<
+	$(AT)$(CC) $(CFLAGSD) -fPIC -c -o $@ $<
+
+clean:
+	$(ECHO) Cleaning...
+	$(AT)-rm -rf $(OBJDIR) $(DOBJDIR) $(OUTDIR)/$(OUTNAME_RELEASE) $(OUTDIR)/$(OUTNAME_DEBUG)
+
+ifneq "$(MAKECMDGOALS)" "clean"
+  -include $(OBJDIR)/*.d $(DOBJDIR)/*.d
+endif
+
