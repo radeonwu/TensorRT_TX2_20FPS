@@ -105,7 +105,7 @@ mplayer -fps 10 -fs -loop 0 *.avi
 $ MP4Box -add test_track1.h264:fps=30 -new DestMovie.mp4
 
 
-# Video file input using Gstreamer 
+# Video file input using Gstreamer --> not successful
 
 (2) AF01 video convert
 from avi -> H264    
@@ -152,7 +152,7 @@ including such an example pipeline, video framerate
 $ gst-launch-1.0 filesrc location=/home/user/Videos/out.yuv ! videoparse width=1920 height=816 framerate=24/1 format=2 ! autovideoconvert ! autovideosink
 
 
-# Use OpenCV 3.0 rather than Gstreamer
+# Use OpenCV 3.0 rather than Gstreamer --> succeed! 
 (1) A good example explanation of opencv 3.0 install on TX2, including code snippet using gstreamer pipeline to read cam input and convert format at the end,       
 http://petermoran.org/csi-cameras-on-tx2/#video-capture-from-gstreamer-pipeline-in-opencv   
 and this one on opencv 3 install on TX2,   
